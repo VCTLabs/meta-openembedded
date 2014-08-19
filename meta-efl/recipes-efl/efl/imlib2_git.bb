@@ -7,12 +7,9 @@ PROVIDES = "virtual/imlib2"
 PV = "1.4.6+gitr${SRCPV}"
 SRCREV = "560a58e61778d84953944f744a025af6ce986334"
 
-inherit efl binconfig
+inherit autotools-brokensep efl binconfig
 SRC_URI = "git://git.enlightenment.org/legacy/${BPN}.git"
 S = "${WORKDIR}/git"
-
-# autotools-brokensep
-B = "${S}"
 
 PACKAGECONFIG ??= ""
 PACKAGECONFIG[gif] = "--with-gif,--without-gif,giflib"
