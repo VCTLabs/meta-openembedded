@@ -17,7 +17,7 @@ SOURCES = "attach.o auth.o btree.o btree_rb.o build.o copy.o date.o delete.o \
            parse.o pragma.o printf.o random.o select.o table.o tokenize.o \
            trigger.o update.o util.o vacuum.o vdbe.o vdbeaux.o where.o"
 
-inherit autotools pkgconfig
+inherit autotools-brokensep pkgconfig
 
 do_configure() {
     echo "main.mk is patched, no need to configure"
