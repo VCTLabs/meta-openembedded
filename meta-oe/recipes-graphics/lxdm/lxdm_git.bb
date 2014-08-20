@@ -22,7 +22,7 @@ DEPENDS += "${@base_contains("DISTRO_FEATURES", "systemd", "", "consolekit", d)}
 # combine oe-core way with angstrom DISTRO_TYPE
 DISTRO_TYPE ?= "${@base_contains("IMAGE_FEATURES", "debug-tweaks", "debug", "",d)}"
 
-inherit autotools pkgconfig gettext systemd
+inherit autotools-brokensep pkgconfig gettext systemd
 
 S = "${WORKDIR}/git"
 
