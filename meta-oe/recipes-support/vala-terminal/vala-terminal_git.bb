@@ -8,7 +8,7 @@ PV = "1.3+gitr${SRCPV}"
 PE = "1"
 PR = "r1"
 
-inherit autotools perlnative vala distro_features_check
+inherit autotools perlnative vala pkgconfig distro_features_check
 # depends on virtual/libx11
 REQUIRED_DISTRO_FEATURES = "x11"
 
