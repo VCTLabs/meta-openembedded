@@ -8,7 +8,7 @@ PV = "1.3+gitr${SRCPV}"
 PE = "1"
 PR = "r1"
 
-inherit autotools-brokensep perlnative vala
+inherit autotools-brokensep perlnative vala pkgconfig
 
 SRC_URI = "${FREESMARTPHONE_GIT}/vala-terminal.git;branch=master"
 S = "${WORKDIR}/git"
