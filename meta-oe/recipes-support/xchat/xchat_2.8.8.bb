@@ -19,15 +19,17 @@ SRC_URI = "http://xchat.org/files/source/2.8/xchat-${PV}.tar.bz2 \
 inherit autotools gettext pkgconfig
 
 PACKAGECONFIG ??= "dbus"
-PACKAGECONFIG[dbus] = "--enable-dbus,--disable-dbus,dbus-glib"
+PACKAGECONFIG[dbus] = "--enable-dbus,--disable-dbus,dbus dbus-glib"
 PACKAGECONFIG[openssl] = "--enable-openssl,--disable-openssl,openssl"
 PACKAGECONFIG[python] = "--enable-python,--disable-python,python"
 
 EXTRA_OECONF = "\
-    --enable-maintainer-mode \
     --disable-perl \
     --disable-tcl \
 "
+do_configure_prepend(){
+    rm -f ${S}/po/Makefile.in.in
+}
 
 RDEPENDS_${PN} += "dbus"
 FILES_${PN} += "${datadir}/dbus-1"
